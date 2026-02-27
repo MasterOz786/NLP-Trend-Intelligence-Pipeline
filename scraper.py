@@ -2,6 +2,8 @@ from playwright.sync_api import sync_playwright
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 import time
+import json
+import os
 
 urls = [
     "https://www.saashub.com/best-finance-software",
@@ -9,6 +11,9 @@ urls = [
 ]
 
 all_results = {}
+
+# Ensure directory exists
+os.makedirs("data/raw", exist_ok=True)
 
 with sync_playwright() as p:
     browser = p.chromium.launch(headless=False)
@@ -57,8 +62,8 @@ with sync_playwright() as p:
     input("\nAll URLs scraped. Press Enter to close browser...")
     browser.close()
 
-# Print everything
-for category_url, products in all_results.items():
-    print(f"\nCategory: {category_url}")
-    for product in products:
-        print(product)
+# Save raw data to JSON
+with open("data/raw/products_raw.json", "w", encoding="utf-8") as f:
+    json.dump(all_results, f, ensure_ascii=False, indent=4)
+
+print("\nRaw dataset saved to data/raw/products_raw.json")
