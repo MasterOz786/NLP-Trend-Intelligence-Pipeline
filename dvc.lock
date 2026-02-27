@@ -1,0 +1,14 @@
+schema: '2.0'
+stages:
+  scrape_products:
+    cmd: python scrapper.py
+    deps:
+    - path: scrapper.py
+      hash: md5
+      md5: 6b5b8ce1915db70e19194926c96d189d
+      size: 3714
+    outs:
+    - path: data/raw/products_raw.json
+      hash: md5
+      md5: 7b6bc5c37857be64d33a2acbbf8fec35
+      size: 249112
