@@ -28,3 +28,19 @@ stages:
       hash: md5
       md5: 7b6768ff6ff96ae56d2287b5652cc2bf
       size: 162979
+  feature_extraction:
+    cmd: python features.py
+    deps:
+    - path: features.py
+      hash: md5
+      md5: 50c10850d4850a3c697d1293a6d9f589
+      size: 1732
+    outs:
+    - path: data/features/bow_matrix.npy
+      hash: md5
+      md5: c7062c9d099d15dadbf2ddfb84a22c9e
+      size: 6155648
+    - path: data/features/vocab.json
+      hash: md5
+      md5: 6315184829fa28ce1a6e957c68f00606
+      size: 32924
