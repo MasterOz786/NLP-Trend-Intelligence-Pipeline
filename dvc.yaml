@@ -12,3 +12,10 @@ stages:
     - preprocessor.py
     outs:
     - data/processed/products_clean.csv
+  feature_extraction:
+    cmd: python features.py
+    deps:
+    - features.py
+    outs:
+    - data/features/bow_matrix.npy
+    - data/features/vocab.json
