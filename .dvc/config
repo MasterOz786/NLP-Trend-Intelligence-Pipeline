@@ -1,0 +1,4 @@
+[core]
+    remote = nlp
+['remote "nlp"']
+    url = s3://nlp-pir-sahab

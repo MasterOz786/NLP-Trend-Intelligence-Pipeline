@@ -1,0 +1,7 @@
+stages:
+  scrape_products:
+    cmd: python scrapper.py
+    deps:
+    - scrapper.py
+    outs:
+    - data/raw/products_raw.json
