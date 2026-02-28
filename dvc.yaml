@@ -19,3 +19,11 @@ stages:
     outs:
     - data/features/bow_matrix.npy
     - data/features/vocab.json
+  trend_report:
+    cmd: python report.py
+    deps:
+    - data/features/vocab.json
+    - data/processed/products_clean.csv
+    - report.py
+    outs:
+    - reports/trend_summary.txt
