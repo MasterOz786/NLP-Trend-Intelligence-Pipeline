@@ -44,3 +44,23 @@ stages:
       hash: md5
       md5: 6315184829fa28ce1a6e957c68f00606
       size: 32924
+  trend_report:
+    cmd: python report.py
+    deps:
+    - path: data/features/vocab.json
+      hash: md5
+      md5: 6315184829fa28ce1a6e957c68f00606
+      size: 32924
+    - path: data/processed/products_clean.csv
+      hash: md5
+      md5: 7b6768ff6ff96ae56d2287b5652cc2bf
+      size: 162979
+    - path: report.py
+      hash: md5
+      md5: 7d0270914e473bd4989570dfdd98786a
+      size: 5319
+    outs:
+    - path: reports/trend_summary.txt
+      hash: md5
+      md5: d8635fc1020a33beb513eed04f489585
+      size: 3052
