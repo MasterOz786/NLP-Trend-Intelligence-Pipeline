@@ -5,3 +5,10 @@ stages:
     - scrapper.py
     outs:
     - data/raw/products_raw.json
+  preprocess:
+    cmd: python preprocessor.py
+    deps:
+    - data/raw/products_raw.json
+    - preprocessor.py
+    outs:
+    - data/processed/products_clean.csv

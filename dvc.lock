@@ -12,3 +12,19 @@ stages:
       hash: md5
       md5: 11ab100d51018a5ea180b44145aae8f0
       size: 249112
+  preprocess:
+    cmd: python preprocessor.py
+    deps:
+    - path: data/raw/products_raw.json
+      hash: md5
+      md5: 11ab100d51018a5ea180b44145aae8f0
+      size: 249112
+    - path: preprocessor.py
+      hash: md5
+      md5: fb3e3a53f9e7838b3d9f4f1d0087eaf3
+      size: 2093
+    outs:
+    - path: data/processed/products_clean.csv
+      hash: md5
+      md5: 7b6768ff6ff96ae56d2287b5652cc2bf
+      size: 162979
